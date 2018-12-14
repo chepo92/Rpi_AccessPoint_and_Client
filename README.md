@@ -15,6 +15,7 @@ sudo apt-get install hostapd dnsmasq
 Content of /etc/dhcpcd.conf
 
 interface uap0
+
  static ip_address=192.168.50.1/24
 
 ## Configure HostAP
