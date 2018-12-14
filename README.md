@@ -1,5 +1,5 @@
 # Rpi_AccessPoint_and_Client
-Rpi3B config to use as WiFi AP and Client simultaneously on the same onboard adapter of the pi, this also allows the pi to share its internet conection (as a repeater) 
+Rpi3B configuration to use it as WiFi AP and Client simultaneously on the same onboard adapter of the Pi, this also allows the pi to share its internet conection (as a repeater), you can connect to your RPi without a router nor ethernet, or operate "headless" or "WirelessHead" with the use of VNC server and have access to the desktop with a tablet or phone with VNC connect
 
 ## Configure WiFi client
 open /etc/wpa_supplicant/wpa_supplicant.conf and set ssid and pass of your router
