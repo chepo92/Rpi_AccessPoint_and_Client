@@ -1,5 +1,5 @@
 # Rpi_AccessPoint_and_Client
-Rpi3B config to use as WiFi AP and Client simultaneously on the same onboar 
+Rpi3B config to use as WiFi AP and Client simultaneously on the same onboard adapter of the pi, this also allows the pi to share its internet conection (as a repeater) 
 
 ## Configure WiFi client
 open /etc/wpa_supplicant/wpa_supplicant.conf and set ssid and pass of your router
@@ -15,11 +15,12 @@ interface uap0
  static ip_address=192.168.50.1/24
 
 ## Configure HostAP
+
 Content of /etc/hostapd/hostapd.conf
 
 interface=uap0
 #driver=nl80211
-ssid=testAP
+ssid=PiAP
 hw_mode=g
 channel=1
 wmm_enabled=0
@@ -27,10 +28,12 @@ macaddr_acl=0
 auth_algs=1
 ignore_broadcast_ssid=0
 wpa=2
-wpa_passphrase=1234567890
+wpa_passphrase=yourPassword
 wpa_key_mgmt=WPA-PSK
 wpa_pairwise=TKIP
 rsn_pairwise=CCMP
+
+** Set the SSID and pass you want the default would be "PiAP" and "yourPassword" respectively
 
 ## Configure the daemon for the host AP
 Add the following to /etc/default/hostapd
