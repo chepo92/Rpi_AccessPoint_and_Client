@@ -19,18 +19,31 @@ interface uap0
 Content of /etc/hostapd/hostapd.conf
 
 interface=uap0
+
 #driver=nl80211
+
 ssid=PiAP
+
 hw_mode=g
+
 channel=1
+
 wmm_enabled=0
+
 macaddr_acl=0
+
 auth_algs=1
+
 ignore_broadcast_ssid=0
+
 wpa=2
+
 wpa_passphrase=yourPassword
+
 wpa_key_mgmt=WPA-PSK
+
 wpa_pairwise=TKIP
+
 rsn_pairwise=CCMP
 
 ** Set the SSID and pass you want the default would be "PiAP" and "yourPassword" respectively
@@ -44,19 +57,28 @@ DAEMON_CONF="/etc/hostapd/hostapd.conf"
 Content of /etc/dnsmasq.conf
 
 interface=lo,uap0
+
 dhcp-range=192.168.50.50,192.168.50.150,12h 
 
 ## Configure Startup
 Add to /etc/rc.local 
 
 service hostapd stop
+
 service dnsmasq stop
+
 service dhcpcd stop
+
 iw dev wlan0 interface add uap0 type __ap
+
 iptables -t nat -A POSTROUTING -o wlan0 -j MASQUERADE
+
 service hostapd start
+
 service dnsmasq start
+
 service dhcpcd start
 
 
 ## Reboot
+sudo reboot
