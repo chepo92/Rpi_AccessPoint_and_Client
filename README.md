@@ -6,6 +6,9 @@ open /etc/wpa_supplicant/wpa_supplicant.conf and set ssid and pass of your route
 
 ## Install hostapd and dnsmasq
 in shell: 
+
+sudo apt-get update
+
 sudo apt-get install hostapd dnsmasq
 
 ## Configure static ip in uap0 
