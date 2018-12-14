@@ -44,9 +44,9 @@ rsn_pairwise=CCMP
 
 ## Configure the daemon for the host AP
 Add the following to /etc/default/hostapd
-`
-DAEMON_CONF="/etc/hostapd/hostapd.conf"
-`
+
+`DAEMON_CONF="/etc/hostapd/hostapd.conf"`
+
 ## Configure AP dns
 Content of /etc/dnsmasq.conf
 ```
@@ -56,6 +56,7 @@ dhcp-range=192.168.50.50,192.168.50.150,12h
 
 ## Configure forwarding
 Uncomment the next line in /etc/sysctl.conf
+
 `net.ipv4.ip_forward=1`
 
 ## Configure Startup
