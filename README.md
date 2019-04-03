@@ -11,7 +11,7 @@ sudo apt-get update
 sudo apt-get install hostapd dnsmasq
 ```
 
-## Configure static ip in uap0  ***
+## Configure static ip in uap0 
 Content of /etc/dhcpcd.conf
 ```
 interface uap0
