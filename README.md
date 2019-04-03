@@ -11,6 +11,23 @@ sudo apt-get update
 sudo apt-get install hostapd dnsmasq
 ```
 
+## Set interfaces wlan0 and uap0 
+Content of /etc/network/interfaces
+```
+auto lo
+iface lo inet loopback
+
+#iface eth0 inet manual
+
+auto wlan0
+allow-hotplug wlan0
+iface wlan0 inet dhcp
+    wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
+
+allow-hotplug uap0
+auto uap0
+```
+
 ## Configure static ip in uap0 
 Content of /etc/dhcpcd.conf
 ```
