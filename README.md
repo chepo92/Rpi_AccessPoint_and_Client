@@ -1,8 +1,8 @@
 # Staus: working 
-As April 8 2019 this is working fine with raspbian jessie and stretch 
+As April 8 2019 this is working fine with raspbian jessie and stretch. Let me know if you have any issue
 
-# Rpi_AccessPoint_and_Client
-Rpi3B configuration to use it as WiFi AP and Client simultaneously on the same onboard adapter of the Pi, this also allows the pi to share its internet conection (as a repeater), you can connect to your RPi without a router nor ethernet, or operate "headless" or "WirelessHead" with the use of VNC server and have access to the desktop with a tablet or phone with VNC connect
+# Raspberry Pi as AccessPoint and Client at the same time! 
+Rpi3B configuration to use it as WiFi AP and Client simultaneously on the same onboard adapter of the Pi, this also allows the pi to share its internet conection (as a repeater), you can connect to your RPi without the need to be conected to a router nor ethernet, and operate "headless" or "WirelessHead" with the use of ssh or VNC server, having access to the desktop with a tablet or phone with VNC connect
 
 ## Configure WiFi client
 open /etc/wpa_supplicant/wpa_supplicant.conf and set ssid and pass of your router
@@ -110,3 +110,5 @@ service dhcpcd start
 
 ## Reboot
 `sudo reboot`
+
+If everything is configured correctly your Pi will be connected to your wifi and also you will see its hotspot network (e.g. PiAP), you will be able to connect to it via any of its two ip (client or hot spot)
