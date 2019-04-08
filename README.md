@@ -3,6 +3,7 @@ Rpi3B configuration to use it as WiFi AP and Client simultaneously on the same o
 
 ## Configure WiFi client
 open /etc/wpa_supplicant/wpa_supplicant.conf and set ssid and pass of your router
+create a copy in the same folder with the name for your interface e.g interface wlan0 wpa_supplicant-wlan0.conf and set in it the ssid and pass of your router
 
 ## Install hostapd and dnsmasq
 in shell: 
@@ -12,32 +13,35 @@ sudo apt-get install hostapd dnsmasq
 ```
 
 ## Set interfaces wlan0 and uap0 
-Content of /etc/network/interfaces
+Comment all lines but source-directory /etc/network/interfaces.d
+Eg. Content of /etc/network/interfaces
+
 ```
-auto lo
-iface lo inet loopback
+source-directory /etc/network/interfaces.d
+#auto lo
+#iface lo inet loopback
 
 #iface eth0 inet manual
 
-auto wlan0
-allow-hotplug wlan0
-iface wlan0 inet dhcp
-    wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
+#auto wlan0
+#allow-hotplug wlan0
+#iface wlan0 inet dhcp
+#   wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
 
-allow-hotplug uap0
-auto uap0
+#allow-hotplug uap0
+#auto uap0
 ```
 
 ## Configure static ip in uap0 
-Content of /etc/dhcpcd.conf
+E.g. Content of /etc/dhcpcd.conf
 ```
 interface uap0
  static ip_address=192.168.50.1/24
 ```
 
 ## Configure HostAP
-
-Content of /etc/hostapd/hostapd.conf
+Set the name and pass for your raspberry hotspot
+E.g Content of /etc/hostapd/hostapd.conf
 
 ```
 interface=uap0
@@ -100,9 +104,6 @@ service hostapd start
 service dnsmasq start
 service dhcpcd start
 ```
-
-
-
 
 ## Reboot
 `sudo reboot`
