@@ -16,8 +16,9 @@ sudo apt-get install hostapd dnsmasq
 ```
 
 ## Set interfaces wlan0 and uap0 
-Comment all lines but source-directory /etc/network/interfaces.d
-Eg. Content of /etc/network/interfaces
+In file /etc/network/interfaces
+Comment all lines except: source-directory /etc/network/interfaces.d
+Eg. 
 
 ```
 source-directory /etc/network/interfaces.d
