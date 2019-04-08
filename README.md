@@ -40,7 +40,7 @@ interface uap0
 ```
 
 ## Configure HostAP
-Set the name and pass for your raspberry hotspot
+Set the name, channel and pass for your raspberry hotspot
 E.g Content of /etc/hostapd/hostapd.conf
 
 ```
