@@ -1,3 +1,6 @@
+# Staus: working 
+As April 8 2019 this is working fine with raspbian jessie and stretch 
+
 # Rpi_AccessPoint_and_Client
 Rpi3B configuration to use it as WiFi AP and Client simultaneously on the same onboard adapter of the Pi, this also allows the pi to share its internet conection (as a repeater), you can connect to your RPi without a router nor ethernet, or operate "headless" or "WirelessHead" with the use of VNC server and have access to the desktop with a tablet or phone with VNC connect
 
