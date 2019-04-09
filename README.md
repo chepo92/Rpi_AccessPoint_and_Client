@@ -88,12 +88,12 @@ Uncomment the next line in /etc/sysctl.conf
 ## Disable auto start of services
 In shell: 
 ```
-sudo systemctl stop hostapd
-sudo systemctl stop dnsmasq
-sudo systemctl stop dhcpcd
-sudo systemctl disable hostapd
-sudo systemctl disable dnsmasq
-sudo systemctl disable dhcpcd
+sudo systemctl stop hostapd &&
+sudo systemctl stop dnsmasq &&
+sudo systemctl stop dhcpcd &&
+sudo systemctl disable hostapd &&
+sudo systemctl disable dnsmasq &&
+sudo systemctl disable dhcpcd &&
 ```
 
 ## Configure Start of services
