@@ -85,17 +85,6 @@ Uncomment the next line in /etc/sysctl.conf
 `net.ipv4.ip_forward=1`
 
 
-## Disable auto start of services
-In shell: 
-```
-sudo systemctl stop hostapd &&
-sudo systemctl stop dnsmasq &&
-sudo systemctl stop dhcpcd &&
-sudo systemctl disable hostapd &&
-sudo systemctl disable dnsmasq &&
-sudo systemctl disable dhcpcd &&
-```
-
 ## Configure Start of services
 Add to /etc/rc.local 
 ```
@@ -107,6 +96,17 @@ iptables -t nat -A POSTROUTING -o wlan0 -j MASQUERADE
 service hostapd start
 service dnsmasq start
 service dhcpcd start
+```
+
+## Disable auto start of services
+In shell: 
+```
+sudo systemctl stop hostapd &&
+sudo systemctl stop dnsmasq &&
+sudo systemctl stop dhcpcd &&
+sudo systemctl disable hostapd &&
+sudo systemctl disable dnsmasq &&
+sudo systemctl disable dhcpcd
 ```
 
 ## Reboot
