@@ -113,3 +113,11 @@ sudo systemctl disable dhcpcd
 `sudo reboot`
 
 If everything is configured correctly your Pi will be connected to your wifi and also you will see its hotspot network (e.g. PiAP), you will be able to connect to it via any of its two ip (client or hot spot)
+
+## Troubleshoot
+Problem: hostapd service is masked 
+`sudo systemctl unmask hostapd.service`
+
+Problem: uap0: IAID conflicts with one assigned to wlan0
+`sudo update-rc.d -f dhcpcd remove`
+
