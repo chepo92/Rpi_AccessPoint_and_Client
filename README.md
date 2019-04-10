@@ -1,4 +1,4 @@
-# Staus: working 
+# Status: working 
 As April 8 2019 this is working fine with raspbian jessie and stretch. Let me know if you have any issue
 
 # Raspberry Pi as AccessPoint and Client at the same time! 
