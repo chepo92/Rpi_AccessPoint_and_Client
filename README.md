@@ -5,8 +5,7 @@ As April 8 2019 this is working fine with raspbian jessie and stretch. Let me kn
 Rpi3B configuration to use it as WiFi AP and Client simultaneously on the same onboard adapter of the Pi, this also allows the pi to share its internet conection (as a repeater), you can connect to your RPi without the need to be conected to a router nor ethernet, and operate "headless" or "WirelessHead" with the use of ssh or VNC server, having access to the desktop with a tablet or phone with VNC connect
 
 ## Configure WiFi client
-open /etc/wpa_supplicant/wpa_supplicant.conf and set ssid and pass of your router
-create a copy in the same folder with the name for your interface e.g interface wlan0 wpa_supplicant-wlan0.conf and set in it the ssid and pass of your router
+create a copy of /etc/wpa_supplicant/wpa_supplicant.conf  in the same folder with the name for your interface e.g interface wlan0 wpa_supplicant-wlan0.conf and set in it the ssid and pass of your router
 
 ## Install hostapd and dnsmasq
 in shell: 
