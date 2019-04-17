@@ -68,7 +68,7 @@ interface=uap0
 #driver=nl80211
 ssid=PiAP
 hw_mode=g
-channel=1
+channel=yourAPChannel
 wmm_enabled=0
 macaddr_acl=0
 auth_algs=1
@@ -81,7 +81,7 @@ rsn_pairwise=CCMP
 ```
 
 
-** Set the SSID and pass you want the default would be "PiAP" and "yourPassword" respectively
+** Set the SSID and password you want the default would be "PiAP" and "yourPassword" respectively, also the channel must be the same to the one you will be connecting the RPi to. (i.e the channel must be the same as your router's)
 
 ## Configure the daemon for the host AP
 Add the following to /etc/default/hostapd
