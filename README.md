@@ -105,7 +105,10 @@ sudo systemctl stop dnsmasq &&
 sudo systemctl stop dhcpcd &&
 sudo systemctl disable hostapd &&
 sudo systemctl disable dnsmasq &&
-sudo systemctl disable dhcpcd
+sudo systemctl disable dhcpcd &&
+sudo systemctl start hostapd &&
+sudo systemctl start dnsmasq &&
+sudo systemctl start dhcpcd
 ```
 
 ## Reboot
