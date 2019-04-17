@@ -35,6 +35,23 @@ source-directory /etc/network/interfaces.d
 #auto uap0
 ```
 
+or
+
+```
+source-directory /etc/network/interfaces.d
+auto lo
+auto eth0
+auto wlan0
+
+iface lo inet loopback
+#iface eth0 inet manual
+
+allow-hotplug wlan0
+iface wlan0 inet manual
+   wpa-conf /etc/wpa_supplicant/wpa_supplicant-wlan0.conf
+```
+
+
 ## Configure static ip in uap0 
 E.g. Content of /etc/dhcpcd.conf
 ```
