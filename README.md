@@ -135,7 +135,9 @@ If everything is configured correctly your Pi will be connected to your wifi and
 
 ## Troubleshoot
 ### Problem: hostapd service is masked 
-`sudo systemctl unmask hostapd.service`
+Diagnostic command `sudo service hostapd status`
+
+Fix: `sudo systemctl unmask hostapd.service`
 
 ### Problem: Not conecting to router
 
@@ -144,4 +146,12 @@ Diagnostic command `service dhcpcd status`
 Throws: uap0: IAID conflicts with one assigned to wlan0
 
 Fix:  `sudo update-rc.d -f dhcpcd remove`
+
+
+## Other commands
+
+`ifup <iface>`
+`ifdown <iface>`
+
+`sudo ifconfig wlan0 up`
 
