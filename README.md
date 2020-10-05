@@ -1,5 +1,5 @@
 # Status: working 
-As April 8 2019 this is working fine with raspbian jessie and stretch. Let me know if you have any issue
+As Oct 5 2020 this is working fine with raspbian stretch. Let me know if you have any issue
 
 # Raspberry Pi as AccessPoint and Client at the same time! 
 Rpi3B configuration to use it as WiFi AP and Client simultaneously on the same onboard adapter of the Pi, this also allows the pi to share its internet conection (as a repeater), you can connect to your RPi without the need to be conected to a router nor ethernet, and operate "headless" or "WirelessHead" with the use of ssh or VNC server, having access to the desktop with a tablet or phone with VNC connect
@@ -12,6 +12,12 @@ in shell:
 ```
 sudo apt-get update
 sudo apt-get install hostapd dnsmasq
+```
+
+
+## Install rng-tools
+```
+sudo apt-get install rng-tools
 ```
 
 ## Set interfaces wlan0 and uap0 
@@ -136,7 +142,7 @@ If everything is configured correctly your Pi will be connected to your wifi and
 ## Troubleshoot
 ### Problem: hostapd service is masked 
 Diagnostic command `sudo service hostapd status`
-
+Throws: hostapd service is masked 
 Fix: `sudo systemctl unmask hostapd.service`
 
 ### Problem: Not conecting to router
@@ -148,10 +154,19 @@ Throws: uap0: IAID conflicts with one assigned to wlan0
 Fix:  `sudo update-rc.d -f dhcpcd remove`
 
 
+### Problem: Not conecting to router
+
+Diagnostic command `service hostapd status`
+
+Throws: uap0: Could not connect to kernel driver or Not enough entropy pool available for secure operations
+Fix:  install rng-tools (see installation steps)
+
 ## Other commands
 
 `ifup <iface>`
 `ifdown <iface>`
 
 `sudo ifconfig wlan0 up`
+
+`ip link show`
 
