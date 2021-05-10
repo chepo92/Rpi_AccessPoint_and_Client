@@ -1,3 +1,5 @@
+# Hardware: Rpi 3 B+ 
+
 # Status: working 
 As Oct 5 2020 this is working fine with raspbian stretch. Let me know if you have any issue
 
